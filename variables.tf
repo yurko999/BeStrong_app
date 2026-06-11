@@ -10,10 +10,16 @@ variable "location" {
   type = string
 }
 
-variable "sql_admin_login" {
-  type = string
-}
-
 variable "runner_ip" {
   type    = string
+}
+
+variable "sql_aad_admin_login" {
+  description = "Microsoft Entra admin login"
+  type        = string
+}
+
+variable "sql_aad_admin_object_id" {
+  description = "Microsoft Entra admin object id"
+  type        = string
 }

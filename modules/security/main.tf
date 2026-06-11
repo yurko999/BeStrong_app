@@ -1,10 +1,3 @@
-resource "random_password" "sql_admin" {
-  length  = 24
-  special = true
-
-  override_special = "!@#$%^&*"
-}
-
 resource "azurerm_key_vault" "main" {
   name = "kv-${var.project_name}-${var.environment}"
 
@@ -34,18 +27,6 @@ resource "azurerm_role_assignment" "current_user_admin" {
 }
 
 data "azurerm_client_config" "current" {}
-
-
-
-resource "azurerm_key_vault_secret" "sql_admin_password" {
-  depends_on = [
-    azurerm_role_assignment.current_user_admin
-  ]
-
-  name         = "sql-admin-password"
-  value        = random_password.sql_admin.result
-  key_vault_id = azurerm_key_vault.main.id
-}
 
 resource "azurerm_private_dns_zone" "sql" {
   name                = "privatelink.database.windows.net"

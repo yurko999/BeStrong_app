@@ -18,13 +18,12 @@ variable "resource_group_name" {
   type        = string
 }
 
-variable "sql_admin_login" {
+variable "sql_aad_admin_login" {
   description = "SQL admin login"
   type        = string
 }
 
-variable "sql_admin_password" {
-  description = "SQL admin password"
+variable "sql_aad_admin_object_id" {
+  description = "SQL admin object ID"
   type        = string
-  sensitive   = true
 }

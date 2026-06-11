@@ -4,9 +4,13 @@ resource "azurerm_mssql_server" "main" {
   location            = var.location
 
   version = "12.0"
+  
+  azuread_administrator {
+    login_username              = var.sql_aad_admin_login
+    object_id                   = var.sql_aad_admin_object_id
+    azuread_authentication_only = true
 
-  administrator_login          = var.sql_admin_login
-  administrator_login_password = var.sql_admin_password
+  }
 
   tags = {
     Project     = var.project_name
@@ -14,6 +18,7 @@ resource "azurerm_mssql_server" "main" {
   }
   
   public_network_access_enabled = false
+
 }
 
 resource "azurerm_mssql_database" "main" {

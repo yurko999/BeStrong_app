@@ -55,8 +55,9 @@ module "sql" {
 
   resource_group_name = module.resource_group.name
 
-  sql_admin_login    = var.sql_admin_login
-  sql_admin_password = module.security.sql_admin_password
+  sql_aad_admin_login     = var.sql_aad_admin_login
+  sql_aad_admin_object_id = var.sql_aad_admin_object_id
+
 }
 
 module "container_app" {
