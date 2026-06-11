@@ -12,6 +12,8 @@ resource "azurerm_mssql_server" "main" {
     Project     = var.project_name
     Environment = var.environment
   }
+  
+  public_network_access_enabled = false
 }
 
 resource "azurerm_mssql_database" "main" {

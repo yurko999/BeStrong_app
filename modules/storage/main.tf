@@ -10,6 +10,8 @@ resource "azurerm_storage_account" "main" {
     Project     = var.project_name
     Environment = var.environment
   }
+
+  public_network_access_enabled = false
 }
 
 resource "azurerm_storage_share" "files" {

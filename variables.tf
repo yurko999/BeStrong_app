@@ -13,3 +13,7 @@ variable "location" {
 variable "sql_admin_login" {
   type = string
 }
+
+variable "runner_ip" {
+  type    = string
+}

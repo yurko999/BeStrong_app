@@ -41,3 +41,8 @@ variable "acr_id" {
 variable "managed_identity_principal_id" {
   type = string
 }
+
+variable "runner_ip" {
+  description = "Public IP address allowed to access Key Vault"
+  type        = string
+}

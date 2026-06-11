@@ -93,6 +93,9 @@ module "security" {
   acr_id = module.acr.id
 
   managed_identity_principal_id = module.container_app.managed_identity_principal_id
+
+  runner_ip = var.runner_ip
+
 }
 
 module "private_endpoints" {
