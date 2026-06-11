@@ -5,8 +5,14 @@ resource "azurerm_container_app_environment" "main" {
   resource_group_name = var.resource_group_name
 
   infrastructure_subnet_id = var.container_app_subnet_id
-
   log_analytics_workspace_id = var.log_analytics_workspace_id
+
+  internal_load_balancer_enabled = true // no public IP on the env
+
+  workload_profile {
+      name                  = "Consumption"
+      workload_profile_type = "Consumption"
+    }
 }
 
 resource "azurerm_container_app" "main" {
