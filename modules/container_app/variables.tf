@@ -27,3 +27,7 @@ variable "container_app_subnet_id" {
   description = "Container Apps subnet ID"
   type        = string
 }
+
+variable "acr_login_server" {
+  type = string
+}

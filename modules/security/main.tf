@@ -10,10 +10,10 @@ resource "azurerm_key_vault" "main" {
 
   public_network_access_enabled = true
   network_acls {
-      default_action = "Deny"
-      bypass         = "AzureServices"
-      ip_rules       = [var.runner_ip]   # the pipeline egress IP
-    }
+    default_action = "Deny"
+    bypass         = "AzureServices"
+    ip_rules       = [var.runner_ip] # the pipeline egress IP
+  }
 
   rbac_authorization_enabled = true
 }

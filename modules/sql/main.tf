@@ -4,7 +4,7 @@ resource "azurerm_mssql_server" "main" {
   location            = var.location
 
   version = "12.0"
-  
+
   azuread_administrator {
     login_username              = var.sql_aad_admin_login
     object_id                   = var.sql_aad_admin_object_id
@@ -16,7 +16,7 @@ resource "azurerm_mssql_server" "main" {
     Project     = var.project_name
     Environment = var.environment
   }
-  
+
   public_network_access_enabled = false
 
 }

@@ -72,6 +72,8 @@ module "container_app" {
   log_analytics_workspace_id = module.monitoring.log_analytics_workspace_id
 
   container_app_subnet_id = module.network.container_app_subnet_id
+  
+  acr_login_server = module.acr.login_server
 }
 
 module "security" {

@@ -11,7 +11,7 @@ variable "location" {
 }
 
 variable "runner_ip" {
-  type    = string
+  type = string
 }
 
 variable "sql_aad_admin_login" {

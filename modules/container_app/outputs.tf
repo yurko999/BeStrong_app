@@ -11,5 +11,5 @@ output "container_app_url" {
 }
 
 output "managed_identity_principal_id" {
-  value = azurerm_container_app.main.identity[0].principal_id
+  value = azurerm_user_assigned_identity.app.principal_id
 }
