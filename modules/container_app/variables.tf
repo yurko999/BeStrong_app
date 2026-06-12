@@ -31,3 +31,8 @@ variable "container_app_subnet_id" {
 variable "acr_login_server" {
   type = string
 }
+
+variable "app_insights_connection_string" {
+  type      = string
+  sensitive = true
+}

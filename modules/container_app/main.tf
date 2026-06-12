@@ -32,13 +32,18 @@ resource "azurerm_container_app" "main" {
   }
 
   template {
-    container {
-      name   = "backend"
-      image  = "nginx:latest"
-      cpu    = 0.5
-      memory = "1Gi"
+  container {
+    name   = "backend"
+    image  = "nginx:latest"
+    cpu    = 0.5
+    memory = "1Gi"
+
+    env {
+      name  = "APPLICATIONINSIGHTS_CONNECTION_STRING"
+      value = var.app_insights_connection_string
     }
   }
+}
 
   ingress {
     external_enabled = true
